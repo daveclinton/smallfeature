@@ -1,3 +1,9 @@
-const IndexPage = () => <h1>Hello David</h1>;
+import Navbar from "./components/navbar";
+
+const IndexPage = () => (
+  <>
+    <Navbar />
+  </>
+);
 
 export default IndexPage;
