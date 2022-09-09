@@ -5,6 +5,8 @@ To run this on localhost type yarn dev and when u are done coding type yarn run 
 
 NOTE: if you have npm just replace yarn dev and yarn run build with npm dev and npm build.
 
+# [CONTRIBUTING] (https://github.com/daveclinton/smallfeature/blob/main/Contributing.md)
+
 ## Getting Started
 
 First, run the development server:
