@@ -26,8 +26,8 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={"md"}
     _hover={{
       textDecoration: "none",
-      bg: useColorModeValue("white", "white"),
-      color: "#000000",
+      bg: useColorModeValue("black", "black"),
+      color: "#ffffff",
       fontWeight: "bolder",
     }}
     href={"#"}
@@ -41,11 +41,11 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg="#000000" px={4}>
+      <Box bg="#ffffff" px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon color="black" />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
@@ -72,7 +72,7 @@ export default function Navbar() {
               as={"nav"}
               spacing={10}
               display={{ base: "none", md: "flex" }}
-              color="white"
+              color="#000000"
               fontWeight="bolder"
             >
               {Links.map((link) => (
@@ -83,7 +83,7 @@ export default function Navbar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }} color="white" bg="#000000">
+          <Box pb={4} display={{ md: "none" }} color="#000000" bg="#ffffff">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
