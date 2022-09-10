@@ -1,10 +1,10 @@
 import Navbar from "./components/navbar";
-import Dashboard from "./components/dashboard";
+import Dashboard, { Illustration } from "./components/dashboard";
 
 const IndexPage = () => (
   <>
   
-    <Dashboard/>
+    <Illustration/>
   </>
 );
 
