@@ -1,17 +1,17 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import React from "react";
 
 function Index() {
   return (
-    <Flex justifyContent="center" >
-      <Box boxSize='sm'  >
-      <Text>Hello World</Text>
+    <Flex justifyContent="center">
+      <Box boxSize="sm">
+        <Heading>Hello World</Heading>
       </Box>
       <Box>
-        <Text>Hello World</Text>
+        <Heading>Hello World</Heading>
       </Box>
     </Flex>
-  )
+  );
 }
 
-export default Index
+export default Index;
