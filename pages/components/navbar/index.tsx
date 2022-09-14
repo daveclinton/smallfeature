@@ -35,8 +35,9 @@ function index() {
           textDecoration="none"
           fontSize="2rem"
           flexGrow={1}
+          _hover={{ textDecoration: "none" }}
         >
-          David
+          Dave
         </Link>
         <UnorderedList
           display="flex"
@@ -44,46 +45,94 @@ function index() {
           textAlign="center"
           mr="2rem"
         >
-          <ListItem lineHeight="40px" mr="1rem">
+          <ListItem
+            lineHeight="40px"
+            mr="1rem"
+            _after={{
+              display: "block",
+              h: "3px",
+              w: "0",
+              bg: "transparent",
+              transition: "width 0.7s ease, background-color 0.5s ease",
+            }}
+            _hover={{ borderBottom: "3px solid #fff", textDecoration: "none" }}
+          >
             <Link
               color="#fff"
               textDecoration="none"
               p="0.5rem 1rem"
               h="100%"
               borderBottom="3px solid transparent"
+              _hover={{ textDecoration: "none" }}
             >
               Home
             </Link>
           </ListItem>
-          <ListItem lineHeight="40px" mr="1rem">
+          <ListItem
+            lineHeight="40px"
+            mr="1rem"
+            _after={{
+              display: "block",
+              h: "3px",
+              w: "0",
+              bg: "transparent",
+              transition: "width 0.7s ease, background-color 0.5s ease",
+            }}
+            _hover={{ borderBottom: "3px solid #fff", textDecoration: "none" }}
+          >
             <Link
               color="#fff"
               textDecoration="none"
               p="0.5rem 1rem"
               h="100%"
               borderBottom="3px solid transparent"
+              _hover={{ textDecoration: "none" }}
             >
               About
             </Link>
           </ListItem>
-          <ListItem lineHeight="40px" mr="1rem">
+          <ListItem
+            lineHeight="40px"
+            mr="1rem"
+            _after={{
+              display: "block",
+              h: "3px",
+              w: "0",
+              bg: "transparent",
+              transition: "width 0.7s ease, background-color 0.5s ease",
+            }}
+            _hover={{ borderBottom: "3px solid #fff", textDecoration: "none" }}
+          >
             <Link
               color="#fff"
               textDecoration="none"
               p="0.5rem 1rem"
               h="100%"
               borderBottom="3px solid transparent"
+              _hover={{ textDecoration: "none" }}
             >
               Blog
             </Link>
           </ListItem>
-          <ListItem lineHeight="40px" mr="1rem">
+          <ListItem
+            lineHeight="40px"
+            mr="1rem"
+            _after={{
+              display: "block",
+              h: "3px",
+              w: "0",
+              bg: "transparent",
+              transition: "width 0.7s ease, background-color 0.5s ease",
+            }}
+            _hover={{ borderBottom: "3px solid #fff", textDecoration: "none" }}
+          >
             <Link
               color="#fff"
               textDecoration="none"
               p="0.5rem 1rem"
               h="100%"
               borderBottom="3px solid transparent"
+              _hover={{ textDecoration: "none" }}
             >
               Contact Me
             </Link>
