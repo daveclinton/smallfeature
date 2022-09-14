@@ -1,4 +1,4 @@
-import { Flex, Link, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Avatar, Flex, Link, ListItem, UnorderedList } from "@chakra-ui/react";
 import React from "react";
 
 function index() {
@@ -21,6 +21,12 @@ function index() {
         h="80px"
         maxW="1500px"
       >
+        <Avatar
+          size={"md"}
+          src={
+            "https://media-exp1.licdn.com/dms/image/C4D03AQG9IJYGoKhsyw/profile-displayphoto-shrink_200_200/0/1663189874953?e=1668643200&v=beta&t=QeHOlNlsgJ6VfZ7OHlw2Xk8BdfIF07TyTQ9dWD5zzRs"
+          }
+        />
         <Link
           color="white"
           alignItems="center"
