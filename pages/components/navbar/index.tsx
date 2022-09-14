@@ -12,6 +12,7 @@ function index() {
       pos="sticky"
       top={0}
       zIndex={20}
+      flexGrow={1}
     >
       <Flex
         justifyContent="center"
@@ -31,18 +32,55 @@ function index() {
         >
           David
         </Link>
-        <UnorderedList>
-          <ListItem>
-            <Link>Home</Link>
+        <UnorderedList
+          display="flex"
+          listStyleType="none"
+          textAlign="center"
+          mr="2rem"
+        >
+          <ListItem lineHeight="40px" mr="1rem">
+            <Link
+              color="#fff"
+              textDecoration="none"
+              p="0.5rem 1rem"
+              h="100%"
+              borderBottom="3px solid transparent"
+            >
+              Home
+            </Link>
           </ListItem>
-          <ListItem>
-            <Link>About</Link>
+          <ListItem lineHeight="40px" mr="1rem">
+            <Link
+              color="#fff"
+              textDecoration="none"
+              p="0.5rem 1rem"
+              h="100%"
+              borderBottom="3px solid transparent"
+            >
+              About
+            </Link>
           </ListItem>
-          <ListItem>
-            <Link>Blog</Link>
+          <ListItem lineHeight="40px" mr="1rem">
+            <Link
+              color="#fff"
+              textDecoration="none"
+              p="0.5rem 1rem"
+              h="100%"
+              borderBottom="3px solid transparent"
+            >
+              Blog
+            </Link>
           </ListItem>
-          <ListItem>
-            <Link>Contact Me</Link>
+          <ListItem lineHeight="40px" mr="1rem">
+            <Link
+              color="#fff"
+              textDecoration="none"
+              p="0.5rem 1rem"
+              h="100%"
+              borderBottom="3px solid transparent"
+            >
+              Contact Me
+            </Link>
           </ListItem>
         </UnorderedList>
       </Flex>
