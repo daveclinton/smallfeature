@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Avatar,
@@ -6,10 +7,16 @@ import {
   Box,
   ListItem,
   UnorderedList,
+  Text,
 } from "@chakra-ui/react";
-import React from "react";
 
 function navbar() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+
   return (
     <Flex
       bg="black"
@@ -150,10 +157,14 @@ function navbar() {
         <Box>
           <HamburgerIcon
             color="white"
-            display={{ base: "block", lg: "none" }}
+            // display={{ base: "block", lg: "none" }}
             mr="40px"
             boxSize="50px"
-          ></HamburgerIcon>
+            cursor="pointer"
+            onClick={handleToggle}
+          >
+            {navbarOpen ? <Text>Utatii</Text> : <></>}
+          </HamburgerIcon>
         </Box>
       </Flex>
     </Flex>
