@@ -1,7 +1,15 @@
-import { Avatar, Flex, Link, ListItem, UnorderedList } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Avatar,
+  Flex,
+  Link,
+  Box,
+  ListItem,
+  UnorderedList,
+} from "@chakra-ui/react";
 import React from "react";
 
-function index() {
+function navbar() {
   return (
     <Flex
       bg="black"
@@ -20,6 +28,7 @@ function index() {
         w="100%"
         h="80px"
         maxW="1500px"
+        ml={{ base: "40px" }}
       >
         <Avatar
           size={"md"}
@@ -40,7 +49,7 @@ function index() {
           Dave
         </Link>
         <UnorderedList
-          display="flex"
+          display={{ base: "none", lg: "flex" }}
           listStyleType="none"
           textAlign="center"
           mr="2rem"
@@ -138,9 +147,17 @@ function index() {
             </Link>
           </ListItem>
         </UnorderedList>
+        <Box>
+          <HamburgerIcon
+            color="white"
+            display={{ base: "block", lg: "none" }}
+            mr="40px"
+            boxSize="50px"
+          ></HamburgerIcon>
+        </Box>
       </Flex>
     </Flex>
   );
 }
 
-export default index;
+export default navbar;
