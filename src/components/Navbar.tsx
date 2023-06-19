@@ -5,16 +5,15 @@ import {
   IconButton,
   useColorMode,
   Image,
-  useDisclosure,
-  Drawer,
-  DrawerContent,
-  DrawerBody,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
 import Logo from "../assets/david.svg";
 
 const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex
@@ -36,23 +35,20 @@ const Navbar: React.FC = () => {
             )
           }
         />
-        <IconButton
-          variant="unstyled"
-          onClick={onOpen}
-          aria-label=""
-          icon={<HamburgerIcon color="classicGreen" boxSize="30px" />}
-        />
-        <Drawer
-          placement="left"
-          variant="primary"
-          //   size={{ lg: "sm" }}
-          onClose={onClose}
-          isOpen={isOpen}
-        >
-          <DrawerContent>
-            <DrawerBody borderBottomWidth="1px">Basic Drawer</DrawerBody>
-          </DrawerContent>
-        </Drawer>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<HamburgerIcon color="classicGreen" boxSize="30px" />}
+            variant="unstyled"
+          />
+          <MenuList>
+            <MenuItem>Home</MenuItem>
+            <MenuItem>Projects</MenuItem>
+            <MenuItem>Blog</MenuItem>
+            <MenuItem>Paid Articles</MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
     </Flex>
   );

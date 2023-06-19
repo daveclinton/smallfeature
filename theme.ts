@@ -15,20 +15,7 @@ const theme = extendTheme({
   styles: {
     global: {},
   },
-  components: {
-    Drawer: {
-      parts: ["dialog", "header", "body"],
-      variants: {
-        primary: {
-          dialog: {
-            top: "60px !important",
-            maxH: "40vh",
-            left: "10px !important",
-          },
-        },
-      },
-    },
-  },
+  components: {},
 });
 
 export default theme;
