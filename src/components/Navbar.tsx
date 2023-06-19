@@ -8,8 +8,7 @@ import {
   useDisclosure,
   Drawer,
   DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
+  DrawerBody,
 } from "@chakra-ui/react";
 import Logo from "../assets/david.svg";
 
@@ -43,10 +42,15 @@ const Navbar: React.FC = () => {
           aria-label=""
           icon={<HamburgerIcon color="classicGreen" boxSize="30px" />}
         />
-        <Drawer onClose={onClose} isOpen={isOpen}>
-          <DrawerOverlay />
+        <Drawer
+          placement="left"
+          variant="primary"
+          //   size={{ lg: "sm" }}
+          onClose={onClose}
+          isOpen={isOpen}
+        >
           <DrawerContent>
-            <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
+            <DrawerBody borderBottomWidth="1px">Basic Drawer</DrawerBody>
           </DrawerContent>
         </Drawer>
       </Flex>
