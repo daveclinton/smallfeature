@@ -8,7 +8,11 @@ const App: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Flex m="20px" align="center" justify="space-between">
+      <Flex
+        m={{ base: "20px", lg: "20px 180px 0px 180px" }}
+        align="center"
+        justify="space-between"
+      >
         <Image src={Logo} h="30px" />
         <Flex align="center">
           <IconButton
