@@ -27,6 +27,12 @@ const theme = extendTheme({
       lineHeight: 1.2,
       fontWeight: 700,
     },
+    h2: {
+      fontSize: "1.4rem",
+      lineHeight: 1.3,
+      fontWeight: 400,
+      textAlign: "center",
+    },
     h3: {
       fontSize: "calc(1.1rem + .5vmin)",
       lineHeight: 1.4,
