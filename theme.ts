@@ -13,7 +13,12 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
   styles: {
-    global: {},
+    global: ({ colorMode }: { colorMode: string }) => ({
+      body: {
+        bg: colorMode === "light" ? colors.light : colors.dark,
+        color: colorMode === "light" ? colors.dark : colors.light,
+      },
+    }),
   },
   components: {},
   textStyles: {
