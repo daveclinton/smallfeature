@@ -7,7 +7,6 @@ import {
   Image,
   useDisclosure,
   Drawer,
-  DrawerBody,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
@@ -48,11 +47,6 @@ const Navbar: React.FC = () => {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
-            <DrawerBody>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-            </DrawerBody>
           </DrawerContent>
         </Drawer>
       </Flex>
