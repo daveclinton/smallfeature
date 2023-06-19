@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Center, Link, Stack, Text } from "@chakra-ui/react";
+import { Center, Link, Stack } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const linkData = [
@@ -11,9 +11,6 @@ const linkData = [
 const Links: React.FC = () => {
   return (
     <Center display="flex" flexDir="column">
-      <Text mb="1rem" textStyle="h2">
-        Links
-      </Text>
       <Stack direction="row" spacing="24px">
         {linkData.map(({ href, text }, data) => (
           <Link key={data} href={href} isExternal>
