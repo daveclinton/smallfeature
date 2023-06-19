@@ -1,38 +1,29 @@
-// import { Button, useColorMode } from "@chakra-ui/react";
-
+import * as React from "react";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Flex, Text, Heading } from "@chakra-ui/layout";
-import { IconButton, useColorMode } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/layout";
+import { IconButton, useColorMode, Image } from "@chakra-ui/react";
+import Logo from "./assets/david.svg";
 
-const App = () => {
+const App: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <Flex m="20px" align="center" justify="space-between">
-        <Flex align="center" justify="space-between">
-          <Flex
-            borderRadius="10px"
-            align="center"
-            justify="center"
-            h="30px"
-            w="30px"
-            bg={colorMode === "light" ? "classicYellow" : "light"}
-            color={colorMode === "light" ? "light" : "dark"}
-          >
-            <Heading textAlign="center" fontSize="34px">
-              D
-            </Heading>
-          </Flex>
-          <Text ml="10px">David C</Text>
-        </Flex>
+        <Image src={Logo} h="30px" />
         <Flex align="center">
           <IconButton
             variant="unstyled"
             aria-label=""
             onClick={toggleColorMode}
-            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            icon={
+              colorMode === "light" ? (
+                <MoonIcon boxSize="20px" />
+              ) : (
+                <SunIcon boxSize="20px" />
+              )
+            }
           />
-          <HamburgerIcon />
+          <HamburgerIcon color="classicGreen" boxSize="30px" />
         </Flex>
       </Flex>
     </>
