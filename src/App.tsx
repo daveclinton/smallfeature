@@ -19,7 +19,9 @@ const App = () => {
             bg={colorMode === "light" ? "classicYellow" : "light"}
             color={colorMode === "light" ? "light" : "dark"}
           >
-            <Heading textAlign="center">D</Heading>
+            <Heading textAlign="center" fontSize="34px">
+              D
+            </Heading>
           </Flex>
           <Text ml="10px">David C</Text>
         </Flex>
@@ -28,7 +30,7 @@ const App = () => {
             variant="unstyled"
             aria-label=""
             onClick={toggleColorMode}
-            icon={colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           />
           <HamburgerIcon />
         </Flex>
