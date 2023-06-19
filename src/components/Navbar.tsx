@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       justify="space-between"
     >
       <Image src={Logo} h="30px" />
-      <Flex align="center">
+      <Flex gap="20px" align="center">
         <IconButton
           variant="unstyled"
           aria-label=""
@@ -27,7 +27,11 @@ const Navbar: React.FC = () => {
             )
           }
         />
-        <HamburgerIcon color="classicGreen" boxSize="30px" />
+        <IconButton
+          variant="unstyled"
+          aria-label=""
+          icon={<HamburgerIcon color="classicGreen" boxSize="30px" />}
+        />
       </Flex>
     </Flex>
   );
