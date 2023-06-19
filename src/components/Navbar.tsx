@@ -1,11 +1,22 @@
 import * as React from "react";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Flex } from "@chakra-ui/layout";
-import { IconButton, useColorMode, Image } from "@chakra-ui/react";
+import {
+  IconButton,
+  useColorMode,
+  Image,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+} from "@chakra-ui/react";
 import Logo from "../assets/david.svg";
 
 const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex
@@ -29,9 +40,21 @@ const Navbar: React.FC = () => {
         />
         <IconButton
           variant="unstyled"
+          onClick={onOpen}
           aria-label=""
           icon={<HamburgerIcon color="classicGreen" boxSize="30px" />}
         />
+        <Drawer onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
+            <DrawerBody>
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
       </Flex>
     </Flex>
   );
