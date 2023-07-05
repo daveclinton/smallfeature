@@ -10,6 +10,7 @@ interface Post {
     publishedAt: string;
     article: string;
     subTitle: string;
+    slug: string;
     cover: {
       data: {
         id: number;
