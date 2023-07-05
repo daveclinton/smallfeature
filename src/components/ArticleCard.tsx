@@ -10,10 +10,10 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { usePosts } from "../query/posts";
+import { Link } from "react-router-dom";
 
 const ArticleCard: React.FC = () => {
   const { isLoading, data } = usePosts();
-  console.log(data?.map((post) => console.log(post.attributes)));
   return (
     <Center display="flex" gap="10px" flexWrap="wrap" m="20px">
       {isLoading ? (
@@ -26,12 +26,13 @@ const ArticleCard: React.FC = () => {
           {data?.map((post) => (
             <LinkBox
               key={post.id}
-              as="article"
+              as={Link}
               maxW="sm"
               borderWidth="1px"
               rounded="md"
               display="flex"
               flexDir="column"
+              to={`/article/${post.attributes.slug}`}
             >
               <Image
                 objectFit="cover"
@@ -43,9 +44,7 @@ const ArticleCard: React.FC = () => {
                   {post.attributes.title}
                 </Text>
                 <Text h="80px" opacity="0.8" fontSize="1rem">
-                  Make the special occasion for your loved ones even more
-                  special by creating an ASCII birthday animation in the Linux
-                  terminal.
+                  {post.attributes.subTitle}
                 </Text>
               </Box>
             </LinkBox>

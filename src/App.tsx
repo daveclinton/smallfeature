@@ -23,7 +23,7 @@ const App: React.FC = () => {
         </>
       )}
       <Routes>
-        <Route path="/article" element={<ArticlePost />} />
+        <Route path="/article/:slug" element={<ArticlePost />} />
       </Routes>
     </QueryClientProvider>
   );
