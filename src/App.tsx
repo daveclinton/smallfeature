@@ -2,6 +2,7 @@ import * as React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Links from "./components/Links";
+import ArticleCard from "./components/ArticleCard";
 
 const App: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <Links />
+      <ArticleCard />
     </>
   );
 };
