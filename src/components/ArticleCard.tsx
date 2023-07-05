@@ -18,7 +18,7 @@ const ArticleCard: React.FC = () => {
     <Center display="flex" gap="10px" flexWrap="wrap" m="20px">
       {isLoading ? (
         <Flex mt="50px" justify="center" align="center" flexDir="column">
-          <CircularProgress value={80} />
+          <CircularProgress isIndeterminate />
           <Heading>Fetching articles</Heading>
         </Flex>
       ) : (
