@@ -13,6 +13,7 @@ import { usePosts } from "../query/posts";
 
 const ArticleCard: React.FC = () => {
   const { isLoading, data } = usePosts();
+  console.log(data?.map((post) => console.log(post.attributes)));
   return (
     <Center display="flex" gap="10px" flexWrap="wrap" m="20px">
       {isLoading ? (
@@ -34,7 +35,7 @@ const ArticleCard: React.FC = () => {
             >
               <Image
                 objectFit="cover"
-                src="https://itsfoss.com/content/images/size/w600/format/webp/2023/07/birthday-wish-linux-terminal.png"
+                src={post.attributes.cover.data.attributes.url}
                 alt="Dan Abramov"
               />
               <Box p="20px">
