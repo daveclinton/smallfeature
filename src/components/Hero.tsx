@@ -1,14 +1,19 @@
 import * as React from "react";
-import { Center, Flex, Text } from "@chakra-ui/react";
+import { Center, Flex, Highlight, Text } from "@chakra-ui/react";
 
 const Hero: React.FC = () => {
   return (
     <Center>
       <Flex m="20px" maxW="1240px" display="flex" flexDir="column" w="100%">
         <Text textAlign="center" mb="1rem" textStyle="h1">
-          Hey there, I'm David Clinton
+          <Highlight
+            query={["David Clinton"]}
+            styles={{ color: "classicGreen" }}
+          >
+            Hey there, I'm David Clinton
+          </Highlight>
         </Text>
-        <Text as="u" mb="1rem" textStyle="h2">
+        <Text mb="1rem" textStyle="h2">
           Software and Web Developer | Frontend Developer
         </Text>
         <Text textAlign="center" textStyle="h3">
