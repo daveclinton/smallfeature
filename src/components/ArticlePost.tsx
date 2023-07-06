@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Center, CircularProgress, Flex, Heading } from "@chakra-ui/react";
+import { Box, Center, CircularProgress, Flex, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useArticleBySlug } from "../query/posts";
 import ReactMarkdown from "react-markdown";
@@ -27,11 +27,29 @@ const ArticlePost: React.FC = () => {
   const articleContent = article?.attributes.article || "";
 
   return (
-    <Center maxW="1020px" m="30px">
-      <Flex flexDir="column">
-        <ReactMarkdown children={articleContent} remarkPlugins={[remarkGfm]} />
-      </Flex>
-    </Center>
+    <Flex
+      sx={{
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center",
+        maxWidth: "1240px",
+        margin: "auto",
+        padding: "20px",
+        "& h1": {
+          fontSize: "1.5rem",
+          lineHeight: 1.3,
+          fontWeight: 700,
+        },
+        "& h2": {
+          fontSize: "1.4rem",
+          lineHeight: 1.3,
+          fontWeight: 400,
+        },
+        "& p": { fontSize: "1rem", fontWeight: 400 },
+      }}
+    >
+      <ReactMarkdown children={articleContent} remarkPlugins={[remarkGfm]} />
+    </Flex>
   );
 };
 
