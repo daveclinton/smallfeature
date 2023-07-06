@@ -83,7 +83,7 @@ export const usePosts = () => {
 export const useArticleBySlug = (slug: string) => {
   return useQuery<Post>(["posts", slug], async () => {
     const response = await axios.get<{ data: Post[] }>(
-      `https://blog-backend-m44q.onrender.com/api/posts?filters[Slug][$eq]=${slug}`
+      `https://blog-backend-m44q.onrender.com/api/posts?filters[Slug][$eq]=${slug}&populate=*`
     );
     return response.data.data[0];
   });
