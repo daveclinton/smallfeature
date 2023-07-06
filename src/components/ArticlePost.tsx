@@ -37,17 +37,22 @@ const ArticlePost: React.FC = () => {
 
   return (
     <Center m="20px" flexDir="column">
-      <Text mb="10px" fontSize="30px" textStyle="h1">
+      <Text mb="20px" fontSize="30px" textStyle="h1">
         {article?.attributes.title}
+      </Text>
+      <Text as="i" mb="20px" textStyle="h3">
+        {article?.attributes.subTitle}
       </Text>
       <Image
         src={article?.attributes?.cover?.data?.attributes?.url}
         alt="Dan Abramov"
+        aspectRatio="auto"
+        maxW={{ lg: "50%" }}
+        mb="30px"
       />
       <Flex
         sx={{
           flexDirection: "column",
-          alignItems: "center",
           maxWidth: "1240px",
           margin: "auto",
           "& h1": {
