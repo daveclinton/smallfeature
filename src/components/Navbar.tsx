@@ -4,15 +4,14 @@ import { Flex } from "@chakra-ui/layout";
 import {
   IconButton,
   useColorMode,
-  Image,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   Center,
+  Link,
+  Highlight,
 } from "@chakra-ui/react";
-import Logo from "../assets/david.svg";
-
 const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -25,7 +24,18 @@ const Navbar: React.FC = () => {
         align="center"
         justify="space-between"
       >
-        <Image src={Logo} h="30px" />
+        <Link
+          textDecor="none"
+          textStyle="h1"
+          fontSize="29px"
+          color="classicGreen"
+          _hover={{ textDecor: "none" }}
+          href="/"
+        >
+          <Highlight query={["DAVID"]} styles={{ color: "classicYellow" }}>
+            ITS DAVID
+          </Highlight>
+        </Link>
         <Flex gap="20px" align="center">
           <IconButton
             variant="unstyled"
