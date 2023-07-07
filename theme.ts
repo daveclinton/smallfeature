@@ -26,20 +26,27 @@ const theme = extendTheme({
       fontSize: "calc(1.8rem + 3vmin)",
       lineHeight: 1.2,
       fontWeight: 700,
+      fontFamily: "'Ysabeau Office', sans-serif",
     },
     h2: {
       fontSize: "1.4rem",
       lineHeight: 1.3,
       fontWeight: 400,
       textAlign: "center",
+      fontFamily: "'Ysabeau Office', sans-serif",
     },
     h3: {
       fontSize: "calc(1.1rem + .5vmin)",
       lineHeight: 1.4,
       opacity: 0.8,
       fontWeight: 400,
+      fontFamily: "'Ysabeau Office', sans-serif",
     },
-    p: { fontSize: "1rem", fontWeight: 400 },
+    p: {
+      fontSize: "1rem",
+      fontWeight: 400,
+      fontFamily: "'Ysabeau Office', sans-serif",
+    },
   },
 });
 

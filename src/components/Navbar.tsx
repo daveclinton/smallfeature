@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
         <Link
           textDecor="none"
           textStyle="h1"
+          fontWeight="1000"
           fontSize="29px"
           color="classicGreen"
           _hover={{ textDecor: "none" }}
