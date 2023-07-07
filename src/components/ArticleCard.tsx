@@ -61,13 +61,14 @@ const ArticleCard: React.FC = () => {
                       objectFit="cover"
                       src={post.attributes.cover.data.attributes.url}
                       alt="Dan Abramov"
+                      maxH="150px"
                     />
                     <Box p="20px">
-                      <Text h="80px" mt="15px" fontSize="1.4rem">
+                      <Text mt="15px" fontSize="1.4rem">
                         {post.attributes.title}
                       </Text>
-                      <Tag>Sample Tag</Tag>
-                      <Text h="80px" opacity="0.8" fontSize="1rem">
+                      <Tag mt="10px">Sample Tag</Tag>
+                      <Text opacity="0.8" fontSize="1rem">
                         {post.attributes.subTitle}
                       </Text>
                     </Box>
