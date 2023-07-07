@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  Button,
   Center,
   CircularProgress,
   Flex,
@@ -7,14 +8,16 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useArticleBySlug } from "../query/posts";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 
 const ArticlePost: React.FC = () => {
   const { slug = "" } = useParams<{ slug: string }>();
   const { isLoading, data: article, error } = useArticleBySlug(slug);
+  const navigate = useNavigate();
 
   if (isLoading) {
     return (
@@ -26,17 +29,21 @@ const ArticlePost: React.FC = () => {
       </Center>
     );
   }
-
   if (error) {
     return <Center>Error loading article.</Center>;
   }
-
   const articleContent = article?.attributes.article || "";
-
-  console.log(article);
-
   return (
     <Center m="20px" flexDir="column">
+      <Button
+        leftIcon={<ArrowBackIcon />}
+        onClick={() => navigate("/")}
+        variant="outline"
+        mb="10px"
+        justifyContent="flex-start"
+      >
+        Back
+      </Button>
       <Text mb="20px" fontSize="30px" textStyle="h1">
         {article?.attributes.title}
       </Text>
