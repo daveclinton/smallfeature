@@ -41,7 +41,7 @@ const ArticlePost: React.FC = () => {
         onClick={() => navigate("/")}
         variant="outline"
         mb="10px"
-        justifyContent="flex-start"
+        alignSelf="start"
       >
         Back
       </Button>
