@@ -13,11 +13,15 @@ import {
   Skeleton,
   Tag,
 } from "@chakra-ui/react";
-import { usePosts } from "../query/posts";
+import { usePaidArticles, usePosts, useProjects } from "../query/posts";
 import { Link } from "react-router-dom";
 
 const ArticleCard: React.FC = () => {
-  const { isLoading, data } = usePosts();
+  const { isLoading: isLoadingPosts, data: postsData } = usePosts();
+  const { isLoading: isLoadingPaidArticles, data: paidArticlesData } =
+    usePaidArticles();
+  const { isLoading: isLoadingProjects, data: projectsData } = useProjects();
+
   return (
     <Center display="flex" gap="10px" flexWrap="wrap" m="20px">
       <Tabs isFitted variant="enclosed">
@@ -25,7 +29,7 @@ const ArticleCard: React.FC = () => {
           display="flex"
           color="classicGreen"
           m="auto"
-          maxW="500px"
+          w={{ md: "500px" }}
           mb="1em"
         >
           <Tab>Blog</Tab>
@@ -41,8 +45,8 @@ const ArticleCard: React.FC = () => {
             flexWrap="wrap"
           >
             <>
-              {data?.map((post) => (
-                <Skeleton isLoaded={!isLoading}>
+              {postsData?.map((post) => (
+                <Skeleton isLoaded={!isLoadingPosts}>
                   <LinkBox
                     key={post.id}
                     as={Link}
@@ -80,8 +84,8 @@ const ArticleCard: React.FC = () => {
             flexWrap="wrap"
           >
             <>
-              {data?.map((post) => (
-                <Skeleton isLoaded={!isLoading}>
+              {projectsData?.map((post) => (
+                <Skeleton isLoaded={!isLoadingProjects}>
                   <LinkBox
                     key={post.id}
                     as={Link}
@@ -90,19 +94,20 @@ const ArticleCard: React.FC = () => {
                     rounded="md"
                     display="flex"
                     flexDir="column"
-                    to={`/article/${post.attributes.slug}`}
+                    to={post.attributes.projectLink}
                   >
                     <Image
                       objectFit="cover"
-                      src={post.attributes.cover.data.attributes.url}
+                      src={post.attributes.projectImage.data.attributes.url}
                       alt="Dan Abramov"
+                      maxH="160px"
                     />
                     <Box p="20px">
-                      <Text h="80px" mt="15px" fontSize="1.4rem">
-                        {post.attributes.title}
+                      <Text mt="15px" fontSize="1.4rem">
+                        {post.attributes.name}
                       </Text>
-                      <Text h="80px" opacity="0.8" fontSize="1rem">
-                        {post.attributes.subTitle}
+                      <Text mt="15px" fontSize="1.4rem">
+                        {post.attributes.projectDescription}
                       </Text>
                     </Box>
                   </LinkBox>
@@ -118,8 +123,8 @@ const ArticleCard: React.FC = () => {
             flexWrap="wrap"
           >
             <>
-              {data?.map((post) => (
-                <Skeleton isLoaded={!isLoading}>
+              {paidArticlesData?.map((post) => (
+                <Skeleton isLoaded={!isLoadingPaidArticles}>
                   <LinkBox
                     key={post.id}
                     as={Link}
@@ -128,20 +133,15 @@ const ArticleCard: React.FC = () => {
                     rounded="md"
                     display="flex"
                     flexDir="column"
-                    to={`/article/${post.attributes.slug}`}
+                    to={post.attributes.articleLink}
                   >
-                    <Image
-                      objectFit="cover"
-                      src={post.attributes.cover.data.attributes.url}
-                      alt="Dan Abramov"
-                    />
-                    <Box p="20px">
-                      <Text h="80px" mt="15px" fontSize="1.4rem">
-                        {post.attributes.title}
+                    <Box h="auto" p="20px">
+                      <Text mt="15px" fontSize="1.4rem">
+                        {post.attributes.articleTitle}
                       </Text>
-                      <Tag mb="10px">Sample Tag</Tag>
-                      <Text h="80px" opacity="0.8" fontSize="1rem">
-                        {post.attributes.subTitle}
+                      <Tag mb="10px"> {post.attributes.tag}</Tag>
+                      <Text opacity="0.8" fontSize="1rem">
+                        {post.attributes.description}
                       </Text>
                     </Box>
                   </LinkBox>

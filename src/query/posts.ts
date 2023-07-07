@@ -71,6 +71,28 @@ interface Post {
   };
 }
 
+interface PaidArticles {
+  id: number;
+  attributes: {
+    articleTitle: string;
+    description: string;
+    creationDate: string;
+    articleLink: string;
+    tag: string;
+  };
+}
+interface Projects {
+  id: number;
+  attributes: {
+    name: string;
+    projectLink: string;
+    creationDate: string;
+    tag: string;
+    projectDescription: string;
+    projectImage: { data: { id: number; attributes: { url: string } } };
+  };
+}
+
 export const usePosts = () => {
   return useQuery<Post[]>("posts", async () => {
     const response = await axios.get<{ data: Post[] }>(
@@ -89,5 +111,23 @@ export const useArticleBySlug = (slug: string) => {
       (post) => post.attributes.slug === slug
     );
     return matchingPost || undefined;
+  });
+};
+
+export const usePaidArticles = () => {
+  return useQuery<PaidArticles[]>("paid-articles", async () => {
+    const response = await axios.get<{ data: PaidArticles[] }>(
+      "https://blog-backend-m44q.onrender.com/api/paid-articles"
+    );
+    return response.data.data;
+  });
+};
+
+export const useProjects = () => {
+  return useQuery<Projects[]>("projects", async () => {
+    const response = await axios.get<{ data: Projects[] }>(
+      "https://blog-backend-m44q.onrender.com/api/projects?populate=*"
+    );
+    return response.data.data;
   });
 };

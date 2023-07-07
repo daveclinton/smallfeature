@@ -17,6 +17,7 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 const ArticlePost: React.FC = () => {
   const { slug = "" } = useParams<{ slug: string }>();
   const { isLoading, data: article, error } = useArticleBySlug(slug);
+
   const navigate = useNavigate();
 
   if (isLoading) {
