@@ -11,6 +11,7 @@ import {
   TabPanels,
   Tabs,
   Skeleton,
+  Tag,
 } from "@chakra-ui/react";
 import { usePosts } from "../query/posts";
 import { Link } from "react-router-dom";
@@ -61,6 +62,7 @@ const ArticleCard: React.FC = () => {
                       <Text h="80px" mt="15px" fontSize="1.4rem">
                         {post.attributes.title}
                       </Text>
+                      <Tag>Sample Tag</Tag>
                       <Text h="80px" opacity="0.8" fontSize="1rem">
                         {post.attributes.subTitle}
                       </Text>
@@ -137,6 +139,7 @@ const ArticleCard: React.FC = () => {
                       <Text h="80px" mt="15px" fontSize="1.4rem">
                         {post.attributes.title}
                       </Text>
+                      <Tag mb="10px">Sample Tag</Tag>
                       <Text h="80px" opacity="0.8" fontSize="1rem">
                         {post.attributes.subTitle}
                       </Text>
