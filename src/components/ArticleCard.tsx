@@ -50,7 +50,7 @@ const ArticleCard: React.FC = () => {
                   <LinkBox
                     key={post.id}
                     as={Link}
-                    maxW="sm"
+                    maxW={{ lg: "sm" }}
                     borderWidth="1px"
                     rounded="md"
                     display="flex"
@@ -90,7 +90,7 @@ const ArticleCard: React.FC = () => {
                   <LinkBox
                     key={post.id}
                     as={Link}
-                    maxW="sm"
+                    maxW={{ lg: "sm" }}
                     borderWidth="1px"
                     rounded="md"
                     display="flex"
@@ -129,7 +129,7 @@ const ArticleCard: React.FC = () => {
                   <LinkBox
                     key={post.id}
                     as={Link}
-                    maxW="sm"
+                    maxW={{ lg: "sm" }}
                     borderWidth="1px"
                     rounded="md"
                     display="flex"
