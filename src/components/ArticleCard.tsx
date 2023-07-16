@@ -1,4 +1,6 @@
 import * as React from "react";
+import * as dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import {
   Center,
   LinkBox,
@@ -12,15 +14,29 @@ import {
   Tabs,
   Skeleton,
   Tag,
+  Flex,
+  Avatar,
 } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/icons";
 import { usePaidArticles, usePosts, useProjects } from "../query/posts";
 import { Link } from "react-router-dom";
+
+dayjs.extend(relativeTime);
 
 const ArticleCard: React.FC = () => {
   const { isLoading: isLoadingPosts, data: postsData } = usePosts();
   const { isLoading: isLoadingPaidArticles, data: paidArticlesData } =
     usePaidArticles();
   const { isLoading: isLoadingProjects, data: projectsData } = useProjects();
+
+  const CircleIcon = (props: any) => (
+    <Icon viewBox="0 0 200 200" {...props}>
+      <path
+        fill="currentColor"
+        d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+      />
+    </Icon>
+  );
 
   return (
     <Center display="flex" gap="10px" flexWrap="wrap" m="20px">
@@ -72,6 +88,18 @@ const ArticleCard: React.FC = () => {
                         {post.attributes.subTitle}
                       </Text>
                     </Box>
+                    <Flex gap="10px" m="20px" alignItems="center">
+                      <Flex gap="10px" alignItems="center">
+                        <Avatar size="sm" />
+                        <Text>By David Clinton</Text>
+                      </Flex>
+                      <Flex gap="10px" alignItems="center">
+                        <CircleIcon boxSize={3} />
+                        <Text>
+                          {dayjs(post.attributes.createdAt).fromNow()}
+                        </Text>
+                      </Flex>
+                    </Flex>
                   </LinkBox>
                 </Skeleton>
               ))}

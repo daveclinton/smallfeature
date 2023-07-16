@@ -18,51 +18,8 @@ interface Post {
           name: string;
           alternativeText: string;
           caption: null | string;
-          width: number;
-          height: number;
-          formats: {
-            small: {
-              ext: string;
-              url: string;
-              hash: string;
-              mime: string;
-              name: string;
-              path: null | string;
-              size: number;
-              width: number;
-              height: number;
-              provider_metadata: {
-                public_id: string;
-                resource_type: string;
-              };
-            };
-            thumbnail: {
-              ext: string;
-              url: string;
-              hash: string;
-              mime: string;
-              name: string;
-              path: null | string;
-              size: number;
-              width: number;
-              height: number;
-              provider_metadata: {
-                public_id: string;
-                resource_type: string;
-              };
-            };
-          };
-          hash: string;
-          ext: string;
-          mime: string;
-          size: number;
           url: string;
           previewUrl: null | string;
-          provider: string;
-          provider_metadata: {
-            public_id: string;
-            resource_type: string;
-          };
           createdAt: string;
           updatedAt: string;
         };
