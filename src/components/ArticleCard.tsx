@@ -17,6 +17,7 @@ import {
   Tag,
   Flex,
   Avatar,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
 import { usePaidArticles, usePosts, useProjects } from "../query/posts";
@@ -64,7 +65,7 @@ const ArticleCard: React.FC = () => {
           >
             <>
               {postsData?.map((post) => (
-                <Skeleton isLoaded={!isLoadingPosts}>
+                <Skeleton isLoaded={!isLoadingPosts} fadeDuration={0.4}>
                   <LinkBox
                     key={post.id}
                     as={Link}
@@ -89,7 +90,13 @@ const ArticleCard: React.FC = () => {
                         Sample Tag
                       </Tag>
                       <Text opacity="0.8" fontSize="1rem">
-                        {post.attributes.subTitle}
+                        {post.attributes.subTitle.slice(0, 80)}...
+                        <ChakraLink
+                          color="classicYellow !important"
+                          to={`/article/${post.attributes.slug}`}
+                        >
+                          Read More
+                        </ChakraLink>
                       </Text>
                     </Box>
                     <Divider maxW="90%" m="auto" />
