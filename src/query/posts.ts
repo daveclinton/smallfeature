@@ -20,8 +20,6 @@ interface Post {
           caption: null | string;
           url: string;
           previewUrl: null | string;
-          createdAt: string;
-          updatedAt: string;
         };
       };
     };
