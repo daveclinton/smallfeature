@@ -13,6 +13,7 @@ import {
   TabPanels,
   Tabs,
   Skeleton,
+  Divider,
   Tag,
   Flex,
   Avatar,
@@ -20,6 +21,7 @@ import {
 import { Icon } from "@chakra-ui/icons";
 import { usePaidArticles, usePosts, useProjects } from "../query/posts";
 import { Link } from "react-router-dom";
+import authorImage from "../assets/me.svg";
 
 dayjs.extend(relativeTime);
 
@@ -83,14 +85,17 @@ const ArticleCard: React.FC = () => {
                       <Text mt="15px" fontSize="1.4rem">
                         {post.attributes.title}
                       </Text>
-                      <Tag mt="10px">Sample Tag</Tag>
+                      <Tag mt="10px" mb="10px">
+                        Sample Tag
+                      </Tag>
                       <Text opacity="0.8" fontSize="1rem">
                         {post.attributes.subTitle}
                       </Text>
                     </Box>
+                    <Divider maxW="90%" m="auto" />
                     <Flex gap="10px" m="20px" alignItems="center">
                       <Flex gap="10px" alignItems="center">
-                        <Avatar size="sm" />
+                        <Avatar size="sm" src={authorImage} />
                         <Text>By David Clinton</Text>
                       </Flex>
                       <Flex gap="10px" alignItems="center">
@@ -139,6 +144,12 @@ const ArticleCard: React.FC = () => {
                         {post.attributes.projectDescription}
                       </Text>
                     </Box>
+                    <Divider maxW="90%" m="auto" />
+                    <Flex m="20px" alignItems="center">
+                      <Text>
+                        Created : {dayjs(post.attributes.createdAt).fromNow()}
+                      </Text>
+                    </Flex>
                   </LinkBox>
                 </Skeleton>
               ))}
@@ -168,11 +179,17 @@ const ArticleCard: React.FC = () => {
                       <Text mt="15px" fontSize="1.4rem">
                         {post.attributes.articleTitle}
                       </Text>
-                      <Tag mb="10px"> {post.attributes.tag}</Tag>
+                      <Tag m="10px"> {post.attributes.tag}</Tag>
                       <Text opacity="0.8" fontSize="1rem">
                         {post.attributes.description}
                       </Text>
                     </Box>
+                    <Divider maxW="90%" m="auto" />
+                    <Flex m="5px 10px 10px 20px" alignItems="center">
+                      <Text>
+                        {dayjs(post.attributes.creationDate).fromNow()}
+                      </Text>
+                    </Flex>
                   </LinkBox>
                 </Skeleton>
               ))}

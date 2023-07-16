@@ -41,6 +41,7 @@ interface Projects {
   attributes: {
     name: string;
     projectLink: string;
+    createdAt: string;
     creationDate: string;
     tag: string;
     projectDescription: string;
