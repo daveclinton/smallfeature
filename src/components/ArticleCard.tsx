@@ -147,7 +147,7 @@ const ArticleCard: React.FC = () => {
                         <Text mt="15px" fontSize="1.4rem">
                           {post.attributes.name}
                         </Text>
-                        <Text mt="15px" fontSize="1.4rem">
+                        <Text mt="15px" fontSize="1rem">
                           {post.attributes.projectDescription}
                         </Text>
                       </Box>
@@ -193,7 +193,7 @@ const ArticleCard: React.FC = () => {
                           {post.attributes.description.slice(0, 180)}...
                           <ChakraLink
                             ml="3px"
-                            color="classicYellow !important"
+                            color="classicGreen"
                             href={`/article/${post.attributes.articleLink}`}
                           >
                             Read More
