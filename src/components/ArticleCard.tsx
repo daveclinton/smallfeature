@@ -127,7 +127,7 @@ const ArticleCard: React.FC = () => {
             <>
               {projectsData?.map((post) => {
                 const createdAtDate = new Date(post.attributes.createdAt);
-
+                const formattedCreationDate = dayjs(createdAtDate).fromNow();
                 return (
                   <Skeleton isLoaded={!isLoadingProjects} key={post.id}>
                     <LinkBox
@@ -155,12 +155,7 @@ const ArticleCard: React.FC = () => {
                       </Box>
                       <Divider maxW="90%" m="auto" />
                       <Flex m="20px" alignItems="center">
-                        <Text>
-                          Created:{" "}
-                          {createdAtDate instanceof Date
-                            ? createdAtDate.toDateString()
-                            : "Invalid Date"}
-                        </Text>
+                        <Text>{formattedCreationDate}</Text>
                       </Flex>
                     </LinkBox>
                   </Skeleton>
@@ -178,7 +173,7 @@ const ArticleCard: React.FC = () => {
             <>
               {paidArticlesData?.map((post) => {
                 const creationDate = new Date(post.attributes.creationDate);
-
+                const formattedCreationDate = dayjs(creationDate).fromNow();
                 return (
                   <Skeleton isLoaded={!isLoadingPaidArticles} key={post.id}>
                     <LinkBox
@@ -201,11 +196,7 @@ const ArticleCard: React.FC = () => {
                       </Box>
                       <Divider maxW="90%" m="auto" />
                       <Flex m="5px 10px 10px 20px" alignItems="center">
-                        <Text>
-                          {creationDate instanceof Date
-                            ? creationDate.toDateString()
-                            : "Invalid Date"}
-                        </Text>
+                        <Text>{formattedCreationDate}</Text>
                       </Flex>
                     </LinkBox>
                   </Skeleton>
