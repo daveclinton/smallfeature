@@ -147,7 +147,7 @@ const ArticleCard: React.FC = () => {
                         <Text mt="15px" fontSize="1.4rem">
                           {post.attributes.name}
                         </Text>
-                        <Text mt="15px" fontSize="1.4rem">
+                        <Text mt="15px" fontSize="1rem">
                           {post.attributes.projectDescription}
                         </Text>
                       </Box>
@@ -177,6 +177,7 @@ const ArticleCard: React.FC = () => {
                     <LinkBox
                       as={Link}
                       maxW={{ lg: "sm" }}
+                      h={{ lg: "350px" }}
                       borderWidth="1px"
                       rounded="md"
                       display="flex"
@@ -189,7 +190,14 @@ const ArticleCard: React.FC = () => {
                         </Text>
                         <Tag m="10px"> {post.attributes.tag}</Tag>
                         <Text opacity="0.8" fontSize="1rem">
-                          {post.attributes.description}
+                          {post.attributes.description.slice(0, 180)}...
+                          <ChakraLink
+                            ml="3px"
+                            color="classicGreen"
+                            href={`/article/${post.attributes.articleLink}`}
+                          >
+                            Read More
+                          </ChakraLink>
                         </Text>
                       </Box>
                       <Divider maxW="90%" m="auto" />
