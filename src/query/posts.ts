@@ -52,7 +52,7 @@ interface Projects {
 export const usePosts = () => {
   return useQuery<Post[]>("posts", async () => {
     const response = await axios.get<{ data: Post[] }>(
-      "https://blog-backend-m44q.onrender.com/api/posts?populate=*"
+      "https://blog-backend-production-1cba.up.railway.app/api/posts?populate=*"
     );
     return response.data.data;
   });
@@ -61,7 +61,7 @@ export const usePosts = () => {
 export const useArticleBySlug = (slug: string) => {
   return useQuery<Post | undefined>(["posts", slug], async () => {
     const response = await axios.get<{ data: Post[] }>(
-      `https://blog-backend-m44q.onrender.com/api/posts?filters[Slug][$eq]=${slug}&populate=*`
+      `https://blog-backend-production-1cba.up.railway.app/api/posts?filters[Slug][$eq]=${slug}&populate=*`
     );
     const matchingPost = response.data.data.find(
       (post) => post.attributes.slug === slug
@@ -73,7 +73,7 @@ export const useArticleBySlug = (slug: string) => {
 export const usePaidArticles = () => {
   return useQuery<PaidArticles[]>("paid-articles", async () => {
     const response = await axios.get<{ data: PaidArticles[] }>(
-      "https://blog-backend-m44q.onrender.com/api/paid-articles"
+      "https://blog-backend-production-1cba.up.railway.app/api/paid-articles"
     );
     return response.data.data;
   });
@@ -82,7 +82,7 @@ export const usePaidArticles = () => {
 export const useProjects = () => {
   return useQuery<Projects[]>("projects", async () => {
     const response = await axios.get<{ data: Projects[] }>(
-      "https://blog-backend-m44q.onrender.com/api/projects?populate=*"
+      "https://blog-backend-production-1cba.up.railway.app/api/projects?populate=*"
     );
     return response.data.data;
   });

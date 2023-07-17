@@ -125,41 +125,47 @@ const ArticleCard: React.FC = () => {
             flexWrap="wrap"
           >
             <>
-              {projectsData?.map((post) => (
-                <Skeleton isLoaded={!isLoadingProjects}>
-                  <LinkBox
-                    key={post.id}
-                    as={Link}
-                    maxW={{ lg: "sm" }}
-                    borderWidth="1px"
-                    rounded="md"
-                    display="flex"
-                    flexDir="column"
-                    to={post.attributes.projectLink}
-                  >
-                    <Image
-                      objectFit="cover"
-                      src={post.attributes.projectImage.data.attributes.url}
-                      alt="Dan Abramov"
-                      maxH="160px"
-                    />
-                    <Box p="20px">
-                      <Text mt="15px" fontSize="1.4rem">
-                        {post.attributes.name}
-                      </Text>
-                      <Text mt="15px" fontSize="1.4rem">
-                        {post.attributes.projectDescription}
-                      </Text>
-                    </Box>
-                    <Divider maxW="90%" m="auto" />
-                    <Flex m="20px" alignItems="center">
-                      <Text>
-                        Created : {dayjs(post.attributes.createdAt).fromNow()}
-                      </Text>
-                    </Flex>
-                  </LinkBox>
-                </Skeleton>
-              ))}
+              {projectsData?.map((post) => {
+                const createdAtDate = new Date(post.attributes.createdAt);
+
+                return (
+                  <Skeleton isLoaded={!isLoadingProjects} key={post.id}>
+                    <LinkBox
+                      as={Link}
+                      maxW={{ lg: "sm" }}
+                      borderWidth="1px"
+                      rounded="md"
+                      display="flex"
+                      flexDir="column"
+                      to={post.attributes.projectLink}
+                    >
+                      <Image
+                        objectFit="cover"
+                        src={post.attributes.projectImage.data.attributes.url}
+                        alt="Dan Abramov"
+                        maxH="160px"
+                      />
+                      <Box p="20px">
+                        <Text mt="15px" fontSize="1.4rem">
+                          {post.attributes.name}
+                        </Text>
+                        <Text mt="15px" fontSize="1.4rem">
+                          {post.attributes.projectDescription}
+                        </Text>
+                      </Box>
+                      <Divider maxW="90%" m="auto" />
+                      <Flex m="20px" alignItems="center">
+                        <Text>
+                          Created:{" "}
+                          {createdAtDate instanceof Date
+                            ? createdAtDate.toDateString()
+                            : "Invalid Date"}
+                        </Text>
+                      </Flex>
+                    </LinkBox>
+                  </Skeleton>
+                );
+              })}
             </>
           </TabPanel>
           <TabPanel
@@ -170,36 +176,41 @@ const ArticleCard: React.FC = () => {
             flexWrap="wrap"
           >
             <>
-              {paidArticlesData?.map((post) => (
-                <Skeleton isLoaded={!isLoadingPaidArticles}>
-                  <LinkBox
-                    key={post.id}
-                    as={Link}
-                    maxW={{ lg: "sm" }}
-                    borderWidth="1px"
-                    rounded="md"
-                    display="flex"
-                    flexDir="column"
-                    to={post.attributes.articleLink}
-                  >
-                    <Box h="auto" p="20px">
-                      <Text mt="15px" fontSize="1.4rem">
-                        {post.attributes.articleTitle}
-                      </Text>
-                      <Tag m="10px"> {post.attributes.tag}</Tag>
-                      <Text opacity="0.8" fontSize="1rem">
-                        {post.attributes.description}
-                      </Text>
-                    </Box>
-                    <Divider maxW="90%" m="auto" />
-                    <Flex m="5px 10px 10px 20px" alignItems="center">
-                      <Text>
-                        {dayjs(post.attributes.creationDate).fromNow()}
-                      </Text>
-                    </Flex>
-                  </LinkBox>
-                </Skeleton>
-              ))}
+              {paidArticlesData?.map((post) => {
+                const creationDate = new Date(post.attributes.creationDate);
+
+                return (
+                  <Skeleton isLoaded={!isLoadingPaidArticles} key={post.id}>
+                    <LinkBox
+                      as={Link}
+                      maxW={{ lg: "sm" }}
+                      borderWidth="1px"
+                      rounded="md"
+                      display="flex"
+                      flexDir="column"
+                      to={post.attributes.articleLink}
+                    >
+                      <Box h="auto" p="20px">
+                        <Text mt="15px" fontSize="1.4rem">
+                          {post.attributes.articleTitle}
+                        </Text>
+                        <Tag m="10px"> {post.attributes.tag}</Tag>
+                        <Text opacity="0.8" fontSize="1rem">
+                          {post.attributes.description}
+                        </Text>
+                      </Box>
+                      <Divider maxW="90%" m="auto" />
+                      <Flex m="5px 10px 10px 20px" alignItems="center">
+                        <Text>
+                          {creationDate instanceof Date
+                            ? creationDate.toDateString()
+                            : "Invalid Date"}
+                        </Text>
+                      </Flex>
+                    </LinkBox>
+                  </Skeleton>
+                );
+              })}
             </>
           </TabPanel>
         </TabPanels>
