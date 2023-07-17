@@ -24,8 +24,6 @@ import { usePaidArticles, usePosts, useProjects } from "../query/posts";
 import { Link } from "react-router-dom";
 import authorImage from "../assets/me.svg";
 
-dayjs.extend(relativeTime);
-
 const ArticleCard: React.FC = () => {
   const { isLoading: isLoadingPosts, data: postsData } = usePosts();
   const { isLoading: isLoadingPaidArticles, data: paidArticlesData } =
@@ -126,6 +124,7 @@ const ArticleCard: React.FC = () => {
           >
             <>
               {projectsData?.map((post) => {
+                dayjs.extend(relativeTime);
                 const createdAtDate = new Date(post.attributes.createdAt);
                 const formattedCreationDate = dayjs(createdAtDate).fromNow();
                 return (
@@ -172,6 +171,7 @@ const ArticleCard: React.FC = () => {
           >
             <>
               {paidArticlesData?.map((post) => {
+                dayjs.extend(relativeTime);
                 const creationDate = new Date(post.attributes.creationDate);
                 const formattedCreationDate = dayjs(creationDate).fromNow();
                 return (
