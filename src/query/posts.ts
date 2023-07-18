@@ -1,6 +1,8 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 
+const baseUrl = import.meta.env.VITE_API_URL;
+
 interface Post {
   id: number;
   attributes: {
@@ -52,7 +54,7 @@ interface Projects {
 export const usePosts = () => {
   return useQuery<Post[]>("posts", async () => {
     const response = await axios.get<{ data: Post[] }>(
-      "https://blog-backend-production-1cba.up.railway.app/api/posts?populate=*"
+      `${baseUrl}/posts?populate=*`
     );
     return response.data.data;
   });
@@ -61,7 +63,7 @@ export const usePosts = () => {
 export const useArticleBySlug = (slug: string) => {
   return useQuery<Post | undefined>(["posts", slug], async () => {
     const response = await axios.get<{ data: Post[] }>(
-      `https://blog-backend-production-1cba.up.railway.app/api/posts?filters[Slug][$eq]=${slug}&populate=*`
+      `${baseUrl}/posts?filters[Slug][$eq]=${slug}&populate=*`
     );
     const matchingPost = response.data.data.find(
       (post) => post.attributes.slug === slug
@@ -73,7 +75,7 @@ export const useArticleBySlug = (slug: string) => {
 export const usePaidArticles = () => {
   return useQuery<PaidArticles[]>("paid-articles", async () => {
     const response = await axios.get<{ data: PaidArticles[] }>(
-      "https://blog-backend-production-1cba.up.railway.app/api/paid-articles"
+      `${baseUrl}/paid-articles`
     );
     return response.data.data;
   });
@@ -82,7 +84,7 @@ export const usePaidArticles = () => {
 export const useProjects = () => {
   return useQuery<Projects[]>("projects", async () => {
     const response = await axios.get<{ data: Projects[] }>(
-      "https://blog-backend-production-1cba.up.railway.app/api/projects?populate=*"
+      `${baseUrl}/projects?populate=*`
     );
     return response.data.data;
   });
