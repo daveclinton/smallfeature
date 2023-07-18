@@ -86,9 +86,9 @@ const ArticleCard: React.FC = () => {
                       <Text mt="15px" fontSize="1.4rem">
                         {post.attributes.title}
                       </Text>
-                      <Tag mt="10px" mb="10px">
+                      {/* <Tag mt="10px" mb="10px">
                         Sample Tag
-                      </Tag>
+                      </Tag> */}
                       <Text opacity="0.8" fontSize="1rem">
                         {post.attributes.subTitle.slice(0, 80)}...
                         <ChakraLink
