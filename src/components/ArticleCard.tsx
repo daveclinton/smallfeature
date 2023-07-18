@@ -194,7 +194,7 @@ const ArticleCard: React.FC = () => {
                           <ChakraLink
                             ml="3px"
                             color="classicGreen"
-                            href={`/article/${post.attributes.articleLink}`}
+                            href={post.attributes.articleLink}
                           >
                             Read More
                           </ChakraLink>
