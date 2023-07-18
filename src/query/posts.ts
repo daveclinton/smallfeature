@@ -13,6 +13,7 @@ interface Post {
     article: string;
     subTitle: string;
     slug: string;
+    topic: string;
     cover: {
       data: {
         id: number;
