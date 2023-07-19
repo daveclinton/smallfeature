@@ -61,7 +61,7 @@ const ArticlePost: React.FC = () => {
       <Flex
         sx={{
           flexDirection: "column",
-          maxWidth: "1240px",
+          maxWidth: { base: "100%", lg: "1240px" },
           margin: "auto",
           "& h1": {
             fontSize: "1.5rem",
@@ -81,7 +81,15 @@ const ArticlePost: React.FC = () => {
             height: "auto",
             margin: "20px auto 20px auto",
           },
+          "& pre": {
+            maxW: "100%",
+            overflow: "auto",
+            color: "classicYellow",
+            bg: "dark",
+          },
           "& code": {
+            maxW: "100%",
+            overflow: "auto",
             color: "classicYellow",
             bg: "dark",
           },
