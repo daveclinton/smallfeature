@@ -48,7 +48,7 @@ const ArticlePost: React.FC = () => {
       <Text mb="20px" fontSize="30px" textStyle="h1">
         {article?.attributes.title}
       </Text>
-      <Text as="i" mb="20px" textStyle="h3">
+      <Text maxW="1240px" as="i" mb="20px" textStyle="h3">
         {article?.attributes.subTitle}
       </Text>
       <Image
@@ -75,11 +75,15 @@ const ArticlePost: React.FC = () => {
             fontWeight: 400,
             marginBottom: "10px",
           },
-          "& p": { fontSize: "1.1rem", fontWeight: 400, marginBottom: "5px" },
+          "& p": { fontSize: "1.2rem", fontWeight: 400, marginBottom: "5px" },
           "& img": {
             width: "100%",
             height: "auto",
             margin: "20px auto 20px auto",
+          },
+          "& code": {
+            color: "classicYellow",
+            bg: "dark",
           },
         }}
       >

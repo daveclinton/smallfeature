@@ -90,7 +90,7 @@ const ArticleCard: React.FC = () => {
                         {post.attributes.topic}
                       </Tag>
                       <Text opacity="0.8" fontSize="1rem">
-                        {post.attributes.subTitle.slice(0, 80)}...
+                        {post.attributes.subTitle.slice(0, 180)}...
                         <ChakraLink
                           color="classicYellow !important"
                           href={`/article/${post.attributes.slug}`}
