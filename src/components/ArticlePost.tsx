@@ -72,8 +72,9 @@ const ArticlePost: React.FC = () => {
           "& h2": {
             fontSize: "1.4rem",
             lineHeight: 1.3,
-            fontWeight: 400,
-            marginBottom: "10px",
+            fontWeight: 700,
+            marginTop: "20px",
+            marginBottom: "30px",
           },
           "& p": { fontSize: "1.2rem", fontWeight: 400, marginBottom: "5px" },
           "& img": {
