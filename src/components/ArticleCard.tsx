@@ -23,6 +23,7 @@ import { Icon } from "@chakra-ui/icons";
 import { usePaidArticles, usePosts, useProjects } from "../query/posts";
 import { Link } from "react-router-dom";
 import authorImage from "../assets/me.svg";
+import { useNavigate } from "react-router-dom";
 
 dayjs.extend(relativeTime);
 
@@ -31,6 +32,8 @@ const ArticleCard: React.FC = () => {
   const { isLoading: isLoadingPaidArticles, data: paidArticlesData } =
     usePaidArticles();
   const { isLoading: isLoadingProjects, data: projectsData } = useProjects();
+
+  const navigate = useNavigate();
 
   const CircleIcon = (props: any) => (
     <Icon viewBox="0 0 200 200" {...props}>
@@ -139,6 +142,7 @@ const ArticleCard: React.FC = () => {
                         m="auto"
                         mb="1rem"
                         w="60%"
+                        onClick={() => navigate(post.attributes.projectLink)}
                       >
                         Live Demo
                       </Button>
