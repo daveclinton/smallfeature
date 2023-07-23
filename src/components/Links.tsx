@@ -27,12 +27,6 @@ const Links: React.FC = () => {
         scaleX: [1, 1, 1],
         borderRadius: ["20%", "20%", "50%", "50%", "20%"],
       }}
-      transition={{
-        duration: 4,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "loop",
-      }}
     >
       <Flex
         margin={{ base: "auto", lg: "unset" }}
