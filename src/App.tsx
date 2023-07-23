@@ -1,7 +1,7 @@
 import * as React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Links from "./components/Links";
+// import Links from "./components/Links";
 import ArticleCard from "./components/ArticleCard";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -18,7 +18,7 @@ const App: React.FC = () => {
       {isHomeRoute && (
         <>
           <Hero />
-          <Links />
+         
           <ArticleCard />
         </>
       )}

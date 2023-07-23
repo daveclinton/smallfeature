@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-import menuTheme from "./src/styles/menuTheme";
+import { menuTheme } from "./src/styles/menuTheme";
 
 export const colors = {
   dark: "#171923",

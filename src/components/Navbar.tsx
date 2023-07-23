@@ -1,17 +1,19 @@
 import * as React from "react";
-import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+// import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Flex } from "@chakra-ui/layout";
 import {
   IconButton,
   useColorMode,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
+  // Menu,
+  // MenuButton,
+  // MenuItem,
+  // MenuList,
   Center,
   Link,
   Highlight,
 } from "@chakra-ui/react";
+
 const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -50,7 +52,7 @@ const Navbar: React.FC = () => {
               )
             }
           />
-          <Menu>
+          {/* <Menu>
             <MenuButton
               as={IconButton}
               aria-label="Options"
@@ -63,7 +65,7 @@ const Navbar: React.FC = () => {
               <MenuItem>Blog</MenuItem>
               <MenuItem>Paid Articles</MenuItem>
             </MenuList>
-          </Menu>
+          </Menu> */}
         </Flex>
       </Flex>
     </Center>

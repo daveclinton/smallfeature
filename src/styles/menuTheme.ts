@@ -1,48 +1,45 @@
 import { menuAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
-const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
-  menuAnatomy.keys
-);
-const variants = {
-  navbarMenu: {
-    button: {
-      _focus: {
-        border: "none",
-      },
-      _clicked: {
-        border: "none",
-      },
-      mt: "-5px",
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys);
+
+// define the base component styles
+const baseStyle = definePartsStyle({
+  list: {
+    py: "4",
+    borderRadius: "xl",
+    border: "none",
+    bg: "dark",
+  },
+  item: {
+    bg: "dark",
+    color: "gray.200",
+    _hover: {
+      bg: "teal.600",
     },
-    list: {
-      // this will style the MenuList component
-      py: "4",
-      pl: "25px",
-      pr: "30px",
-      height: "133px",
-      border: "none",
-      bg: "#FFFFFF",
-      boxShadow: "0px 4px 30px rgba(0, 0, 0, 0.1)",
-      borderRadius: "10px",
-      color: "textMuted",
-      gap: "25px",
-    },
-    item: {
-      // this will style the MenuItem and MenuItemOption components
-      fontWeight: 600,
-      fontSize: "18px",
-      p: 0,
-      lineHeight: "21.6px",
-      _hover: {
-        bg: "none",
-      },
-      _focus: {
-        bg: "none",
-      },
+    _focus: {
+      bg: "teal.600",
     },
   },
-};
-
-const menuTheme = defineMultiStyleConfig({ variants });
-export default menuTheme;
+  groupTitle: {
+    textTransform: "uppercase",
+    color: "white",
+    textAlign: "center",
+    letterSpacing: "wider",
+    opacity: "0.7",
+  },
+  command: {
+    opacity: "0.8",
+    fontFamily: "mono",
+    fontSize: "sm",
+    letterSpacing: "tighter",
+    pl: "4",
+  },
+  divider: {
+    my: "4",
+    borderColor: "white",
+    borderBottom: "2px dotted",
+  },
+});
+export const menuTheme = defineMultiStyleConfig({ baseStyle });

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Center, Flex, Highlight, Text, Image } from "@chakra-ui/react";
 import authorImage from "../assets/me.svg";
+import Links from "./Links";
 
 const Hero: React.FC = () => {
   return (
@@ -39,12 +40,11 @@ const Hero: React.FC = () => {
             including, but not limited to React, Typescript, Javascript, Chakra
             UI, many more web dev related topics and Cloud Computing
           </Text>
-          <Text mb="1rem" textStyle="h3">
-            You can carry on scrolling for a bit more info about me if you like.
+          <Text mb="2rem" textStyle="h3">
+            I've been programming for more than five (5) years and working
+            professionally for three (3) as a frontend developer.
           </Text>
-          <Text mb="1rem" textStyle="h3">
-            Or if you want to get in touch, feel free to reach out to me...
-          </Text>
+          <Links />
         </Flex>
         <Center>
           <Image

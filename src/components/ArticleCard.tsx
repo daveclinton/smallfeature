@@ -48,7 +48,7 @@ const ArticleCard: React.FC = () => {
           display="flex"
           color="classicGreen"
           m="auto"
-          w={{ md: "500px" }}
+          w={{ md: "100%" }}
           mb="1em"
         >
           <Tab>Articles</Tab>
