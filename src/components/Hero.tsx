@@ -35,15 +35,12 @@ const Hero: React.FC = () => {
           >
             Software and Web Developer | Frontend Developer | Technical Author
           </Text>
-          <Text mb="1rem" textStyle="h3">
+          <Text mb="2rem" textStyle="h3">
             Welcome to my digital garden where I write about many things,
             including, but not limited to React, Typescript, Javascript, Chakra
             UI, many more web dev related topics and Cloud Computing
           </Text>
-          <Text mb="2rem" textStyle="h3">
-            I've been programming for more than five (5) years and working
-            professionally for three (3) as a frontend developer.
-          </Text>
+
           <Links />
         </Flex>
         <Center>
